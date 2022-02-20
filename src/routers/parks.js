@@ -7,6 +7,7 @@ const baseUrl = '/parks'
 
 routes.get(`${baseUrl}`, controller.getAll)
 routes.get(`${baseUrl}/:id`, controller.getId)
+routes.post(`${baseUrl}`, controller.registerPark)
 
 
 module.exports = routes

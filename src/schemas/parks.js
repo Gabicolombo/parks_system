@@ -10,21 +10,22 @@ const parkSchema = new mongoose.Schema({
         required: true
     },
     Horario_Abertura:{
-        type: Date, // ver se o que seria melhor
+        type: String, // ver se o que seria melhor
         required: true
     },
     Horario_encerramento:{
-        type: Date,
+        type: String,
         required: true
     },
     Data_Abertura:{
-        type: Date,
+        type: String,
         required: true
     },
-    Id_localizacao: {
-        type: Number,
-        unique: true,
-        required:true
+    id_localizacao: {
+       type: mongoose.Schema.Types.String,
+       required: true,
+       unique: true,
+       ref: 'localizacao'
     }
 })
 
