@@ -2,7 +2,7 @@ const Locations = require('../schemas/location')
 
 const getAll = async(req, res, next)=>{
     try{
-        const locations = Locations.find({}).sort({"Logradouro": 1})
+        const locations = await Locations.find({}).sort({"Logradouro": 1})
         if(!locations) return res.status(200).json({message: 'Nenhuma localização encontrada'})
         res.status(200).send(locations)
     }catch(err){

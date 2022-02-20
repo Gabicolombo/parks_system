@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Park = require('./parks')
 
 const locationSchema = new mongoose.Schema({
     UF:{
@@ -26,6 +27,12 @@ const locationSchema = new mongoose.Schema({
         type: String,
         required: true
     }
+})
+
+locationSchema.virtual('parks', {
+    ref: 'Park',
+    localField: 'CEP',
+    foreignField: 'id_localizacao'
 })
 
 locationSchema.pre('save', async function(next){
