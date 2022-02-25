@@ -5,6 +5,11 @@ const parkSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    cod:{
+        type:  mongoose.Schema.Types.String,
+        required: true,
+        ref: 'Parques'
+    },
     Ativo: {
         type: Boolean,
         required: true

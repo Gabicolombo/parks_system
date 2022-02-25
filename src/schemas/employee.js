@@ -25,9 +25,20 @@ const employeeSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
+    codParque:{
+        type: mongoose.Schema.Types.String,
+        required: true,
+        ref: 'Parques'
+    },
     Demissao:{
         type: String
     }
+})
+
+employeeSchema.virtual('parks', {
+    ref: 'Park',
+    localField: 'CodParque',
+    foreignField: 'Cod'
 })
 
 employeeSchema.pre('save', async function(next){
