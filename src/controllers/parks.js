@@ -132,7 +132,6 @@ const getId = async(req, res, next) => {
                 }
             }
         ]).allowDiskUse(true)
-       
         res.status(200).send(park)
     }catch(err){
         console.log(err.message)
